@@ -20,7 +20,7 @@ Promise.all([mapaFetch2, dataFetch2]).then(([barrios, data]) => {
       type: 'quantize', 
       n: 10,
       scheme: 'ylorbr',
-      label: 'Cantidad de denuncias',
+      label: 'Denuncias por comuna en el año 2019',
       legend: true,
     },
     marks: [
@@ -31,7 +31,7 @@ Promise.all([mapaFetch2, dataFetch2]).then(([barrios, data]) => {
           return cantReclamos
         },
         stroke: '#ccc',
-        title: d => `${d.properties.BARRIO}\n${d.properties.DENUNCIAS} denuncias`,
+        title: d => `${d.properties.BARRIO}\n${reclamosPorBarrio.get(d.properties.BARRIO).length} denuncias`,
       }),
     ],
   })

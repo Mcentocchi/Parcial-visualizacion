@@ -39,7 +39,9 @@ Promise.all([mapaFetch3, dataFetch3]).then(([barrios, data]) => {
     
     width: 1000
   })
-
+  d3.select("#chart3")
+  .append('h4')
+  .text('Progreso anual por estación')
   /* Agregamos al DOM la visualización chartMap */
   d3.select('#chart3').append(() => chartMap)
 })
