@@ -12,9 +12,13 @@ d3.dsv(';','../data/147_desratizacion_muchos_anios.csv', d3.autoType).then(data 
     },
 
     marks: [
-      Plot.barY(datosFiltrados, Plot.groupX({y: "count"}, {x: "estacion", fill: "blue"})),
+      Plot.barY(datosFiltrados, Plot.groupX({y: "count"}, {x: "estacion", fill: "estacion"})),
       Plot.ruleY([0])
-    ]
+    ],
+    color: {
+      legend:true,
+      range: ["lightblue","orange","lightgreen","red"]
+    }
   })
   d3.select("#chart1")
   .append('h4')
