@@ -21,8 +21,9 @@ Promise.all([mapaFetch3, dataFetch3]).then(([barrios, data]) => {
     color: {
       scheme: 'ylorbr',
     },
+
     marks: [
-      Plot.density(data, { x: 'lon', y: 'lat', fill: 'density',bandwidth: 2, thresholds: 30 }),
+      Plot.density(data, { x: 'lon', y: 'lat', fill: 'density',bandwidth: 15, thresholds: 30 }),
       Plot.geo(barrios, {
         stroke: 'gray',
         title: d => `${d.properties.BARRIO}\n${d.properties.DENUNCIAS} denuncias`,
@@ -30,12 +31,11 @@ Promise.all([mapaFetch3, dataFetch3]).then(([barrios, data]) => {
     ],
     facet: {
       data: data,
-      x: d => d.estacion,
-      y: d => d.anio
+      x: d => d.anio
     },
-    fx: {
-      domain: ['verano', 'otoño', 'primavera', 'invierno']
-    },
+    // fx: {
+    //   domain: ['verano', 'otoño', 'primavera', 'invierno']
+    // },
     
     width: 1000
   })
