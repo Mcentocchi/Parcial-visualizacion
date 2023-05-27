@@ -15,7 +15,7 @@ d3.dsv(';', '../data/147_desratizacion_muchos_anios.csv', d3.autoType).then(data
     },
   
       marks: [
-        Plot.areaY(data, Plot.groupX({y: "count"}, {x: "anio",fill: "Red",fillOpacity: 0.7})),
+        Plot.barY(data, Plot.groupX({y: "count"}, {x: "anio",fill: "#D2691E"})),
         Plot.ruleY([0]),
       ]
     })
