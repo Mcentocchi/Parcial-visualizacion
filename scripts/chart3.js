@@ -23,7 +23,7 @@ Promise.all([mapaFetch3, dataFetch3]).then(([barrios, data]) => {
     },
 
     marks: [
-      Plot.density(data, { x: 'lon', y: 'lat', fill: 'density',bandwidth: 15, thresholds: 30 }),
+      Plot.density(data, { x: 'lon', y: 'lat', fill: 'density',bandwidth: 10, thresholds: 30 }),
       Plot.geo(barrios, {
         stroke: 'gray',
         title: d => `${d.properties.BARRIO}\n${d.properties.DENUNCIAS} denuncias`,
@@ -41,7 +41,7 @@ Promise.all([mapaFetch3, dataFetch3]).then(([barrios, data]) => {
   })
   d3.select("#chart3")
   .append('h4')
-  .text('Progreso anual por estación')
+  .text('Progreso anual de la desratización en CABA')
   /* Agregamos al DOM la visualización chartMap */
   d3.select('#chart3').append(() => chartMap)
 })
